@@ -2,8 +2,8 @@
 
 ## Getting Started
 ---
-Make sure you have a local server and browser installed and running on your machine.  
-Browse to the project's root folder. Start the program by serving the page.
+Make sure you have a browser installed and running on your machine.  
+Browse to the project's root folder. Start the program by serving the index.html file.
 
 ## Project Structure
 ---
