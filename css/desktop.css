@@ -1,0 +1,9 @@
+@media screen and (min-width: 32.5em) { 
+    /* beginning of media query */
+      
+      main {
+        display: grid;
+        grid-template-columns: 445px 526px 380px;
+        grid-template-rows: auto;
+    }
+    }
