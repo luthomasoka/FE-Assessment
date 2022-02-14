@@ -1,0 +1,620 @@
+:root {
+    --font-size: 12px;
+  }
+  
+  * {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+  }
+  
+  main {
+    color: #A0A0A0;
+  }
+  
+  #user-action {
+    grid-column: 10;
+  }
+  
+  #product-details {
+    margin-top: 6%;
+    grid-column: 5/10;
+  }
+  
+  .banner-logo {
+    grid-column: 1/3;
+    padding-right: 1rem;
+  }
+  
+  .banner-logo img {
+    width: 80%;
+    height: 90%;
+  }
+  
+  .banner-arrow img {
+    width: 30%;
+    margin-left: 0;
+  }
+  
+  .banner {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-flow: column;
+    background-color: rgb(255, 245, 238);
+    height: 9%;
+    margin-top: 2%;
+      
+      }
+      
+  .banner-arrow {
+    grid-column: 10 / 11;
+    align-self: center;
+  
+  }
+  
+  .banner-items {
+    grid-column: 3 / 10;
+    display: grid;
+    grid-template-columns: auto;
+    padding-left: 0;
+    margin: 0;
+    align-content: center;
+  }
+  
+  .banner-items li {
+    color: #FF6600;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 12px;
+  }
+  
+  #banner-item-two {
+    display: none;
+      grid-column: 6/10;
+      padding-right: 2rem;
+  
+  }
+  
+  #banner-item-one {
+      grid-column: 3/6;
+      padding-right: 2rem;
+  }
+  
+  #product-img {
+    grid-column: 1/3;
+    margin-top:0;
+    
+  }
+  
+  
+  #product-img img {
+    width: 280px;
+    height: 280px;
+    margin-left: 30px;
+    margin-top:0;
+  }
+  
+  .top-section-header {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+  }
+  
+  #shipping-label,
+  #dispatch-label,
+  #stock-label {
+    background-color: rgb(255, 245, 238);
+    border-radius: 2px 0 0 2px;
+    color: #FF6600;
+    line-height: 16px;
+    text-align: left;
+    padding: 2px 6px;
+    font-size: 12px;
+  
+  }
+  
+  #dispatch-label,
+  #stock-label {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #shipping-label {
+    background: linear-gradient(113.1deg, rgb(254, 140, 48) 14%, rgb(253, 75, 101) 80.5%, rgb(255, 53, 109) 100.6%);
+    color: rgb(255, 245, 238);
+  }
+  
+  .tick-icon{
+  padding: 2px 5px 0 5px;
+  }
+  
+  .product-name {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #product-title {
+    font-size: 1rem;
+    line-height: 24px;
+    color: #333333;
+    font-weight: 540;
+    margin-top: 2%;
+  }
+  
+  #tags {
+    background-color: #f8f8ff;
+    color: rgb(128,128,128);
+    font-weight: 100;
+    margin-left: 130px;
+    padding: 2px;
+    font-size: 12px;
+    line-height: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 2px;
+    margin-top:-30%;
+  }
+  
+  .top-section-footer {
+    display: flex;
+    flex-direction: row;
+    margin-top: -3%;
+  }
+  
+  #reviews {
+    font-size: 12px;
+    color: rgb(169,169,169);
+    grid-column: 3/4;
+    justify-self: start;
+    font-size: 12px;
+  }
+  
+  #buyer {
+    font-size: 12px;
+    margin-left: 30px;
+    color: black;
+    font-weight: 600;
+  }
+  
+  #rating-count {
+    font-size: 12px;
+    color: #FF6600;
+    margin: 5px;
+    align-self: center;
+  }
+  
+  #discount-qty {
+    color:#FF6600;
+    margin-right: 5px;
+    font-size: 14px;
+    align-self: center;
+  }
+  
+  #discount-duration {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    align-self: center;
+    font-style: italic;
+  }
+  
+  #alert-logo {
+    margin-right: 4px;
+  }
+  
+  .payment-img {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  
+  .stars {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .star {
+    margin-left: 5px;
+    align-self: center;
+  }
+  
+  .discount {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    color: #999999;
+    
+  }
+  
+  
+  article p {
+    margin-left: -10%;
+  }
+  
+  .qty-rocker p {
+    display: none;
+  }
+  
+  .discount p {
+    font-size: 14px;
+  }
+  
+  .pricing-properties p {
+    margin: 0 1% 0;
+  }
+  
+  .discount p:nth-child(2) {
+    color: #C0C0C0;
+  }
+  
+  #clock-logo {
+    margin-left: 20px;
+    margin-right: 10px;
+    align-self: center;
+  }
+  
+  
+  #accessory-price,
+  #accessory {
+    color: black;
+    font-weight: 500;
+    font-size: 13px;
+  }
+  
+  #accessory {
+    grid-column: 1/4;
+    font-weight: 600;
+  }
+  
+  #accessory-price {
+    grid-column: 4/6;
+    font-weight: 600;
+    justify-self: center;
+  }
+  
+  .accessory-item {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-flow: row;
+    margin-bottom: 12px;
+    align-items: center;
+  }
+  
+  .accessories {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 1.5%;
+  }
+  
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    grid-column: 6;
+  }
+  
+  .quantity_minus,
+  .quantity_plus {
+    display: block;
+    width: 37px;
+    height: 37px;
+    margin: 0;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 23px;
+    background-color: white;
+    color: #E6E7EB;
+    border: 1px solid #E6E7EB;
+  }
+  
+  
+  .quantity_input {
+    width: 40px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: 1px solid #E6E7EB;
+    background: white;
+  }
+  
+  .quantity_input:hover {
+    border: 1px solid #FF6600;
+  }
+
+  #assurance {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .shipping-detail p:nth-child(1) {
+    display: inline block;
+    margin: 19px -10px 0 0;
+  }
+  
+  #assurance p {
+    margin: 0 3px 0 0;
+    font-weight: 600;
+    align-self: start;
+  }
+  
+  .bottom-section-footer{
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  #payments {
+    margin-top: 11px;
+    margin-bottom: 11px;
+  }
+  
+  .payment-logo {
+    margin-top: 15px;
+    margin-left: 3px;
+    margin-right: 1px;
+  }
+  
+  #inspection {
+    margin-left: 20px;
+  }
+  
+  #current-price {
+    color: #FF6600;
+    font-weight: 600;
+    margin: 5px 0 0 0;
+    font-size: 16px;
+  }
+  
+  .pricing-properties {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    font-size: 14px;
+  }
+  
+  .pricing-properties p:nth-child(3) {
+    font-weight: 500;
+    color: black;
+  }
+  
+  #TA {
+    font-size: 14px;
+    margin-right: 2px;
+  }
+  
+  #before-price {
+    text-decoration: line-through;  
+    margin: 0.3% 0 2.5%;
+    font-size: 14px;
+  }
+  
+  #login-btn {
+    text-align: center;
+    padding: 0.3em 1.2em;
+    border: 0.16em solid rgba(255,255,255,0);
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    background-color: #FF6600;
+    color: white;
+    line-height: 20px;
+    margin-top: 7px;
+    margin-left: 12px;
+  }
+  
+  #supplier-btn {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    background-color: white;
+    color: #FF6600;
+    border: 1px solid #FF6600;
+    justify-items: flex-end;
+    align-items: center;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-right: 40px;
+    margin-left: 12px;
+  }
+  
+  #login-btn:hover,
+  #supplier-btn:hover{
+      border-color: rgba(255,255,255,1);
+      }
+  
+  .supplier-icon {
+      margin-left: 30px;
+      margin-right: 15px;
+  }
+  
+  article {
+    border-radius: 8px;
+    width: 95%;
+    height: 42%;
+    box-shadow: 0 5px 5px 0 #E6E7EB;
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 6%;
+    margin: 9% 2% 2%;
+    padding-right: 0;
+    padding-left: 10px;
+    
+  }
+  
+  #lead,
+  #shipping {
+    display: flex;
+    flex-direction: row;
+    color: #999999;
+    margin-left: 10px;
+  }
+  
+  #shipping {
+  margin-top: -5px;
+  }
+  
+  #lead img,
+  #shipping img {
+    margin-left: 15px;
+  }
+  
+  #lead-time,
+  #shipping-time {
+  margin-left: 8px;
+  }
+  
+  #title,
+  #shipping-country,
+  #shipping-title {
+    text-decoration: underline;
+  }
+  
+  #title,
+  #shipping-title {
+  
+  margin: 1px 0 0 1px;
+  
+    
+  }
+  
+  #title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  
+  }
+  
+  .shipping-detail {
+    margin-top: -2%;
+  }
+  
+  #currecy{
+    margin-right: 5px;
+  }
+  
+  #currency,
+  #total-amount {
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  #total {
+    float: right;
+    margin-right: 7%;
+    margin-top: -2%;
+  }
+  
+  hr {
+    height: 1px;
+    background-color: #dcdcdc;
+    color: #dcdcdc;
+    border: none;
+    margin-top: -0.1%;
+  }
+  
+  .qty-rocker {
+    display: block;
+  }
+  
+  
+  @media screen and (min-width: 32.5em) { 
+      /* beginning of media query */
+        
+    main {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 1rem;
+  }
+  
+      .qty-rocker {
+    display: grid;
+    grid-template-columns: 8% 92%;  
+  }
+    
+    .qty-rocker p {
+    display: block;
+  }
+    
+    #product-img img {
+      margin-left: 10px;
+      margin-top: 15%;
+      width: 400px;
+      height: 400px;
+      transition: 1s;
+    }
+    
+    #product-img {
+      transition: 1s;
+    }
+
+    #product-img img:hover {
+      transform: scale(1.5);
+      z-index: 2;
+    }
+
+    #tags {
+      margin-left: 10px;
+    }
+
+    #banner-item-two {
+      display: block;
+      grid-column: 6/10;
+      padding-right: 2rem;
+  }
+    
+    .banner {
+      height: 7.5%;
+    }
+    
+    #banner-item-one {
+      padding-right: 0;
+    }
+
+    #accessory {
+      grid-column: 2/4;
+      font-weight: 600;
+  }
+    
+    .quantity_input {
+    width: 70px;
+  }
+    
+    .bottom-section-footer{
+      margin-top: -5px;
+  }
+    
+  .login-btn,
+  .supplier-btn {
+    margin-left: 9px;
+    
+  }
+
+  .banner-arrow img {
+    width: 20%;
+    margin-left: 30px;
+  }
+
+  .banner-arrow {
+    grid-column: 10 / 11;
+    align-self: center;
+  
+  }
+
+      }

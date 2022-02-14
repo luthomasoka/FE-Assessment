@@ -11,7 +11,6 @@ The project files and folders are organized as follows:
 ```
 root                    (project root folder)
 +-- css                (stylesheets for page)
-  +-- desktop.css       (specific stylesheet)
   +-- mobile.css        (specific stylesheet)
 +-- js                (source code for page)
   +-- main.js              (actual logic)

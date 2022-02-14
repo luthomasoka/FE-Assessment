@@ -14,9 +14,9 @@ const shippintTime = document.querySelector("#shipping-time");
 const ratingCount = document.querySelector("#rating-count");
 const mainImage = document.querySelector("img");
 const hotSaleTag = document.querySelector("#tags");
-const minus = document.querySelector(".quantity__minus");
-const plus = document.querySelector(".quantity__plus");
-const input = document.querySelector(".quantity__input");
+const minus = document.querySelector(".quantity_minus");
+const plus = document.querySelector(".quantity_plus");
+const input = document.querySelector(".quantity_input");
 const currentPrice = document.getElementById("current-price");
 const beforePrice = document.getElementById("before-price");
 const accessories = document.querySelector(".accessories");
@@ -32,7 +32,7 @@ const renderProductData = (product) => {
     shippingCountry.innerHTML = shipping.method.country;
     shippingTitle.innerHTML = shipping.method.title;
     buyers.innerHTML = reviews.total_buyers;
-    leadTime.innerHTML = shipping.lead_time.value;
+    leadTime.innerHTML = emboldenNumberText(product);
     discountAmount.innerHTML = discount.amount;
     shippintTime.innerHTML = shipping.method.shipping_time.value;
     ratingCount.innerHTML = reviews.rating;
@@ -111,15 +111,15 @@ const accessoryElement = (obj, key, index) => {
     obj[key].price.value
   }</span>
           <div class="quantity">
-          <button class="quantity__minus button" data-label="${
+          <button class="quantity_minus button" data-label="${
             obj[key].label
-          }" data-id="${index + 1}"><span>-</span></button>
-          <input name="quantity" type="text" id="quantity_${
+          }" data-id="${index + 1}"><span id="minus">-</span></button>
+          <input name="quantity" type="number" id="${
             index + 1
-          }" class="quantity__input " value="1">
-          <button class="quantity__plus button" data-label="${
+          }" class="quantity_input " value="1">
+          <button class="quantity_plus button" data-label="${
             obj[key].label
-          }" data-id="${index + 1}"><span>+</span></button>
+          }" data-id="${index + 1}"><span id="plus">+</span></button>
         </div>         
       </div>
     `;
@@ -182,13 +182,36 @@ const updateAccessoryQuantity = (label, newQuanity) => {
   }
 };
 
+accessories.addEventListener("change", (e) => {
+  
+  const inputID = e.target.getAttribute("id");
+  const input = e.target;
+  const btns = document.querySelectorAll(`[data-id="${inputID}"]`);
+  
+  if (input.value > 0) {
+       btns[0].style.borderColor = '#FF6600';
+       btns[1].style.borderColor = '#FF6600';
+    
+       btns[0].style.color = '#FF6600';
+       btns[1].style.color = '#FF6600';
+    
+  } else {
+      btns[0].style.borderColor = '#E6E7EB';
+     btns[1].style.borderColor = '#FF6600';
+    
+      btns[0].style.color = '#E6E7EB';
+     btns[1].style.color = '#FF6600';
+  }
+});
+  
+  
 // Description: Listens for click events on accessories section
 accessories.addEventListener("click", (e) => {
   const buttonClassList = e.target.classList;
 
   if (
     buttonClassList.contains("button") &&
-    buttonClassList.contains("quantity__minus")
+    buttonClassList.contains("quantity_minus")
   ) {
     // Get the data id of the button
     const dataID = e.target.getAttribute("data-id");
@@ -196,7 +219,8 @@ accessories.addEventListener("click", (e) => {
     const dataLabel = e.target.getAttribute("data-label");
 
     // Get the input that matches the ID
-    const input = document.getElementById("quantity_" + dataID);
+    const input = document.getElementById(dataID);
+    const btn = e.target;
 
     //
 
@@ -205,25 +229,27 @@ accessories.addEventListener("click", (e) => {
       let value = input.value;
 
       if (value > 0) value--;
-
-      input.value = value;
+        
+        input.value = value;
 
       // Update the quantity of the accessory
       updateAccessoryQuantity(dataLabel, value);
     }
+    
   }
 
   if (
     buttonClassList.contains("button") &&
-    buttonClassList.contains("quantity__plus")
+    buttonClassList.contains("quantity_plus")
   ) {
     // Get the data id of the button
+    const btn = e.target;
     const dataID = e.target.getAttribute("data-id");
 
     const dataLabel = e.target.getAttribute("data-label");
 
     // Get the input that matches the ID
-    const input = document.getElementById("quantity_" + dataID);
+    const input = document.getElementById(dataID);
 
     // Get value of the input
     if (input != undefined) {
@@ -236,8 +262,47 @@ accessories.addEventListener("click", (e) => {
       // Update the quantity of the accessory
       updateAccessoryQuantity(dataLabel, value);
     }
+    
+  }
+  
+  if (buttonClassList.contains("button")) {
+    const dataID = e.target.getAttribute("data-id");
+    
+    const input = document.getElementById(dataID);
+    
+    const btns = document.querySelectorAll(`[data-id="${dataID}"]`);
+    
+    const plus = document.querySelector("#plus");
+    const minus = document.querySelector("#minus");
+    
+    
+    if (input.value > 0) {
+         btns[0].style.borderColor = '#FF6600';
+         btns[1].style.borderColor = '#FF6600';
+      
+         btns[0].style.color = '#FF6600';
+         btns[1].style.color = '#FF6600';
+      
+    } else {
+        btns[0].style.borderColor = '#E6E7EB';
+       btns[1].style.borderColor = '#FF6600';
+      
+      btns[0].style.color = '#E6E7EB';
+       btns[1].style.color = '#FF6600';
+    }
   }
 });
+
+const emboldenNumberText = (product) => {
+  
+  const {shipping} = product;
+  
+  let str = shipping.lead_time.value;
+  let substr = '10';
+  let newStr = str.replace(substr, `<weight>${substr}</weight>`);
+  
+  return newStr;
+}
 
 // The init methods initialises our application
 const init = (async () => {

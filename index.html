@@ -3,16 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Assessment 2</title>
-    <link rel="stylesheet" href="css/desktop.css" />
-    <link rel="stylesheet" href="css/mobile.css" />
+    <title>FE Assessment 2</title>
+    <link rel="stylesheet" href="css/base.css" />
     <script defer src="js/main.js"></script>
   </head>
 
   <body>
     <main>
       <section id="product-img">
-        <img src="#" alt="#" />
+        <img src="#" alt="#"/>
       </section>
       <section id="product-details">
         <div class="top-section-header">
@@ -45,11 +44,11 @@
         <div class="middle-section">
           <div class="pricing-properties">
             <p id="current-price"></p>
-            <span>/option |</span>
-            <span id="options">2 options</span>
-            <span>(Min.Order)</span>
+            <p> / Option </p>
+            <p>2 Options</p>
+            <p>(Min.Order)</p>
           </div>
-          <span id="before-price"></span>
+          <p id="before-price"></p>
         </div>
         <hr />
         <div class="banner">
@@ -72,14 +71,20 @@
           </div>
           <span id="discount-duration"></span>
         </div>
-        <span id="accessory-options">Options:</span>
-        <div class="accessories"></div>
+        <div class="qty-rocker">
+          <p>Options:</p>
+          <div class="accessories">
+        </div>
+        </div>
+  
         <div class="bottom-section-footer">
           <span id="assurance">
             <div id="alert-logo">
               <img src="images/lock-icon.svg" alt="lock-icon" />
             </div>
-            Trade Assurance
+            <p>
+              Trade Assurance
+            </p>
             <span>protects your Alibaba.com orders</span>
           </span>
           <div class="payment-img">
@@ -101,26 +106,24 @@
       <section id="user-action">
         <article>
           <div id="total">
-            <p>
-              <span id="currency">R</span><span id="total-amount">0</span>
-            </p>
+            <p><span id="currency">R</span><span id="total-amount">0</span></p>
           </div>
           
+          <div class="shipping-detail">
           <p>
             Ship to <span id="shipping-country"></span>
-            <span id="shipping-title"></span>
-          </p>
+            <p id="title">
+              by <span id="shipping-title"></span>
+            </p>
           <p id="lead">Lead Time <span id="lead-time"></span>
               <img src="images/info-icon.png" alt="info-icon" />
           </p>
-          
+
           <p id="shipping">Shipping time <span id="shipping-time"></span>
               <img src="images/info-icon.png" alt="info-icon" />
           </p>
-          
-          <button id="login-btn">
-            Login to Purchase
-          </button>
+
+          <button id="login-btn">Login to Purchase</button>
           <button id="supplier-btn">
             <div class="supplier-icon">
               <img src="images/supplier-icon.png" alt="envelope icon" />
